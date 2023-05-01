@@ -94,6 +94,11 @@ function onResponse_Img(response){
 
 function OnTwitchStreamerImg(response){
     dati=response.data;
+    // controllo che il canale cercato corrisponda ad un canale che trasmette Sport(id=518203)
+    let m=0;
+    if(dati[m].game_id!=="518203"){
+        m++;
+    }
     // ottengo url dell'immagine del profilo e lainserisco nel suo div 
     const profiloUrl=dati[0].thumbnail_url;
     const image=document.createElement('img');
@@ -119,7 +124,7 @@ function OnTwitchStreamer(response){
     for(let cate of categoria){
         
         // faccio delle assegnazioni dei dati che voglio far visualizzare in output
-        const userName=cate.user_name;
+        const userName=encodeURIComponent(cate.user_name);
         const titoloStream=cate.title;
         const spettatori=cate.viewer_count;
         // creo dei link dinamici che m permettono di entrare nella stream del div cliccato
