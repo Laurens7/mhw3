@@ -100,7 +100,7 @@ function OnTwitchStreamerImg(response){
         m++;
     }
     // ottengo url dell'immagine del profilo e lainserisco nel suo div 
-    const profiloUrl=dati[0].thumbnail_url;
+    const profiloUrl=dati[m].thumbnail_url;
     const image=document.createElement('img');
     image.src=profiloUrl;
     const Images=document.querySelectorAll('.streamerImg');
