@@ -109,7 +109,7 @@ function OnTwitchStreamerImg(response){
     // di chiamata ,quindi ho creato un ciclo per far in modo che nonostante il disordinato response ogni immagine profilo finisse nel suo div dedicato
     for(let l=0;l<5;l++){
         const divImage=Images[l];
-        if(dati[0].display_name===User[l].innerText)
+        if(dati[m].display_name===User[l].innerText)
             divImage.appendChild(image);
     }
 
